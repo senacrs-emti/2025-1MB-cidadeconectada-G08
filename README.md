@@ -1,1 +1,3 @@
 # 2025-1MB-cidadeconectada-G08
+O projeto trata-se de um local onde as pessoas desempregadas consigam produzir um currículo atrativo, para além disso consigam ter ideia de formações, preparação para entrevistas, saber onde procurar o emprego (recomendação de onde procurar) e dando dicas e conselhos. Sabemos que muitas pessoas não tem acesso a essas informações, então vamos reunir tudo em um só local. 
+Muitas pessoas não tem acesso a formações ou informações de como montar seu próprio currículo, o que prejudica na hora de encontrar um emprego ideal, então ter uma plataforma que os ajude de forma prática faz com que a possibilidade de ser empregado aumente. 
