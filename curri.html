@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Curriculando — Monte seu currículo profissional</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --cream: #F6EFE6; /* creme claro */
+      --cream-600: #E9DFD0;
+      --gray-900: #1c2835; /* quase preto */
+      --gray-700: #2f3d53;
+      --gray-500: #6B7280;
+      --accent: #CBB79D; /* tom creme mais escuro para destaque */
+      --glass: rgba(255,255,255,0.6);
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      color-scheme: light;
+    }
+ 
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--cream) 0%, #F4F1ED 100%);}
+    a{color:inherit;text-decoration:none}
+ 
+    /* container */
+    .site{max-width:1200px;margin:36px auto;padding:28px;}
+ 
+    /* header */
+    header{display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{width:54px;height:54px;border-radius:12px;background:linear-gradient(135deg,var(--gray-900),var(--gray-700));display:flex;align-items:center;justify-content:center;color:var(--cream);font-weight:800;font-size:20px;box-shadow:0 6px 18px rgba(31,41,51,0.12)}
+    .brand h1{margin:0;font-size:20px;color:var(--gray-900)}
+    .brand p{margin:0;font-size:13px;color:var(--gray-500)}
+ 
+    nav{display:flex;gap:12px;align-items:center}
+    .nav-link{padding:8px 14px;border-radius:8px;color:var(--gray-700);font-weight:600}
+    .nav-link.cta{background:var(--gray-900);color:var(--cream);box-shadow:0 6px 18px rgba(31,41,51,0.08)}
+ 
+    /* hero */
+    .hero{display:grid;grid-template-columns:1fr 460px;gap:28px;margin-top:28px;align-items:center}
+    .hero-card{background:linear-gradient(180deg,rgba(255,255,255,0.6),rgba(255,255,255,0.45));padding:34px;border-radius:16px;box-shadow:0 10px 30px rgba(31,41,51,0.06)}
+    .hero h2{margin:0 0 8px;font-size:28px;color:var(--gray-900)}
+    .hero p{margin:0 0 18px;color:var(--gray-700)}
+    .features{display:flex;gap:12px;flex-wrap:wrap}
+    .feature{background:var(--cream-600);padding:10px 12px;border-radius:10px;font-weight:600;color:var(--gray-900);font-size:14px}
+ 
+    /* form preview */
+    .preview{background:var(--gray-900);color:var(--cream);padding:18px;border-radius:12px}
+    .preview h3{margin:0 0 8px;font-size:16px}
+    .preview p{margin:0;font-size:13px;color:rgba(255,255,255,0.9)}
+ 
+    /* builder form */
+    form.builder{display:flex;flex-direction:column;gap:12px}
+    label{display:flex;flex-direction:column;font-size:13px;color:var(--gray-700)}
+    input[type='text'], input[type='email'], textarea, select{padding:12px;border-radius:10px;border:1px solid rgba(31,41,51,0.08);background:white;font-size:14px}
+    .row{display:flex;gap:12px}
+    .row .col{flex:1}
+    .actions{display:flex;gap:10px;align-items:center}
+    button{padding:10px 14px;border-radius:10px;border:0;background:var(--gray-900);color:var(--cream);font-weight:700;cursor:pointer}
+    button.ghost{background:transparent;color:var(--gray-900);border:1px solid rgba(31,41,51,0.06)}
+ 
+    /* templates */
+    .templates{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}
+    .template{background:linear-gradient(180deg,#fff,#FBF8F5);padding:14px;border-radius:12px;border:1px solid rgba(31,41,51,0.04);box-shadow:0 6px 20px rgba(31,41,51,0.04)}
+    .template h4{margin:0 0 6px;font-size:14px}
+    .template p{margin:0;font-size:12px;color:var(--gray-500)}
+ 
+    /* info section */
+    .info{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:34px}
+    .card{background:linear-gradient(180deg,var(--cream),#fff);padding:18px;border-radius:12px;border:1px solid rgba(31,41,51,0.03)}
+ 
+    footer{margin-top:34px;padding-top:22px;border-top:1px solid rgba(31,41,51,0.04);display:flex;justify-content:space-between;align-items:center;color:var(--gray-500)}
+ 
+    /* responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .templates{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:560px){
+      .site{padding:18px}
+      .templates{grid-template-columns:1fr}
+      .brand h1{font-size:18px}
+      .logo{width:46px;height:46px;font-size:18px}
+    }
+  </style>
+</head>
+<body>
+  <div class="site">
+    <header>
+      <div class="brand">
+        <div>
+          <h1>Curriculando</h1>
+          <p>Monte currículos profissionais com rapidez e estilo</p>
+        </div>
+      </div>
+ 
+      <nav>
+        <a class="nav-link" href="#features">Recursos</a>
+        <a class="nav-link" href="#templates">Modelos</a>
+        <a class="nav-link" href="#faq">Ajuda</a>
+        <a class="nav-link cta" href="#builder">Começar</a>
+      </nav>
+    </header>
+ 
+    <main>
+      <section class="hero">
+        <div class="hero-card">
+          <h2>Crie um currículo que conta sua história — rápido e bonito.</h2>
+          <p>Curriculando ajuda você a montar, formatar e baixar um currículo profissional em minutos. Escolha um modelo, preencha suas informações e exporte em PDF pronto para enviar.</p>
+ 
+          <div class="features" id="features">
+            <div class="feature">Modelos profissionais</div>
+            <div class="feature">Layout limpo e moderno</div>
+            <div class="feature">Exportar em PDF</div>
+            <div class="feature">Compatível com LinkedIn</div>
+          </div>
+ 
+          <div style="margin-top:18px;display:flex;gap:10px">
+            <a class="nav-link cta" href="#builder">Começar agora</a>
+            <a class="nav-link ghost" href="#templates">Ver modelos</a>
+          </div>
+        </div>
+ 
+        <aside>
+          <div class="preview">
+            <h3>Pré-visualização rápida</h3>
+            <p id="pv-name">Nome Completo</p>
+            <p id="pv-title">Título profissional — Ex: Desenvolvedor Front-end</p>
+            <p style="margin-top:10px;font-size:13px;color:rgba(255, 235, 235, 0.85)">Adicione experiências, educação e habilidades. Use modelos para ajustes automáticos de layout.</p>
+          </div>
+ <div style="margin-top:12px;background:transparent;padding:10px;border-radius:10px">
+            <small style="color:var(--gray-700)">Dica: mantenha seu resumo em 2-4 linhas e destaque resultados com números.</small>
+          </div>
+        </aside>
+      </section>
+ 
+      <section id="builder" style="margin-top:22px;">
+        <div class="card">
+          <h3 style="margin-top:0">Construtor de Currículo</h3>
+          <form class="builder" id="builderForm" onsubmit="event.preventDefault(); generatePreview();">
+            <div class="row">
+              <div class="col">
+                <label>Nome completo
+                  <input type="text" id="name" placeholder="Ex: Maria Silva" />
+                </label>
+              </div>
+              <div class="col">
+                <label>Profissão / Título
+                  <input type="text" id="title" placeholder="Ex: Analista de Marketing" />
+                </label>
+              </div>
+            </div>
+ 
+            <label>Email
+              <input type="email" id="email" placeholder="seu@exemplo.com" />
+            </label>
+ 
+            <label>Resumo
+              <textarea id="summary" rows="3" placeholder="Resumo curto sobre sua experiência e objetivo"></textarea>
+            </label>
+ 
+            <div class="row">
+              <div class="col">
+                <label>Experiência (título)
+                  <input type="text" id="xp1" placeholder="Cargo — Empresa (Ano-Início - Ano-Fim)" />
+                </label>
+              </div>
+              <div class="col">
+                <label>Educação
+                  <input type="text" id="edu1" placeholder="Curso — Instituição (Ano)" />
+                </label>
+              </div>
+            </div>
+ 
+            <div class="actions">
+              <button type="submit">Atualizar pré-visualização</button>
+              <button type="button" class="ghost" onclick="downloadSample()">Baixar exemplo PDF</button>
+            </div>
+          </form>
+        </div>
+ 
+        <div class="templates" id="templates" aria-label="Modelos">
+          <div class="template">
+            <h4>Clássico — Formal</h4>
+            <p>Ótimo para áreas administrativas e jurídicas.</p>
+          </div>
+          <div class="template">
+            <h4>Moderno — Visual</h4>
+            <p>Design com seções destacadas e ícones sutis.</p>
+          </div>
+          <div class="template">
+            <h4>Compacto — Técnico</h4>
+            <p>Perfeito para desenvolvedores e engenheiros.</p>
+          </div>
+        </div>
+ 
+      </section>
+ 
+      <section class="info" id="faq" style="margin-top:18px">
+        <div class="card">
+          <h4>Como funciona</h4>
+          <p style="color:var(--gray-700)">Preencha seu nome, título e experiências. Escolha um modelo e exporte em PDF. Nossos layouts cuidam da hierarquia visual e tipografia para você.</p>
+        </div>
+        <div class="card">
+          <h4>Boas práticas</h4>
+          <ul style="margin:8px 0 0 18px;color:var(--gray-700)">
+            <li>Mantenha foco nos resultados (números sempre que possível).</li>
+            <li>Use palavras-chave da vaga.</li>
+            <li>Não ultrapasse duas páginas, salvo em casos especiais.</li>
+          </ul>
+        </div>
+      </section>
+ 
+    </main>
+
+    <footer>
+      <div>© <strong>Curriculando</strong> — Feito com foco em clareza e carreira</div>
+      <div style="font-size:13px;color:var(--gray-500)">Versão de demonstração • Suporte: contato@curriculando.ex</div>
+    </footer>
+  </div>
+
+  <script>
+    function generatePreview(){
+      const name = document.getElementById('name').value.trim() || 'Seu nome';
+      const title = document.getElementById('title').value.trim() || 'Título profissional — Ex: Desenvolvedor Front-end';
+      document.getElementById('pv-name').textContent = name;
+      document.getElementById('pv-title').textContent = title;
+      // small animation to show update
+      const pv = document.querySelector('.preview');
+      pv.style.transform = 'translateY(-6px)';
+      setTimeout(()=>pv.style.transform='translateY(0)',180);
+    }
+
+    function downloadSample(){
+      // Placeholder: in a full app this would call a server or client-side PDF generator.
+      alert('Funcionalidade de exportar PDF não implementada neste demo. Posso integrar uma biblioteca (ex: jsPDF) se desejar.');
+    }
+
+    // quick demo prefill
+    document.getElementById('name').value = 'Pérola Cunha';
+    document.getElementById('title').value = 'Designer de Produto';
+    generatePreview();
+  </script>
+</body>
+</html>
